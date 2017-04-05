@@ -1,8 +1,9 @@
 package com.mobilsoftlab.uniql.restaurantapp;
 
+import com.mobilsoftlab.uniql.restaurantapp.interactor.InteractorModule;
 import com.mobilsoftlab.uniql.restaurantapp.interactor.favourite.FavouriteInteractor;
 import com.mobilsoftlab.uniql.restaurantapp.interactor.restaurant.RestaurantInteractor;
-import com.mobilsoftlab.uniql.restaurantapp.model.Restaurant;
+import com.mobilsoftlab.uniql.restaurantapp.repository.RepositoryModule;
 import com.mobilsoftlab.uniql.restaurantapp.ui.UIModule;
 import com.mobilsoftlab.uniql.restaurantapp.ui.favourites.FavouritesActivity;
 import com.mobilsoftlab.uniql.restaurantapp.ui.favourites.FavouritesPresenter;
@@ -20,7 +21,7 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules = {UIModule.class})
+@Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class})
 public interface RestaurantAppApplicationComponent {
     void inject(MainActivity mainActivity);
     void inject(RestaurantDetailActivity restaurantDetailActivity);
