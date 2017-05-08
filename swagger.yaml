@@ -1,0 +1,95 @@
+swagger: '2.0'
+info:
+  title: Restaurant App API
+  description: Mobilsoftware laboratory HW
+  version: "1.0.0"
+# the domain of the service
+host: api.restaurant.com
+# array of all schemes that your API supports
+schemes:
+  - http
+# will be prefixed to all paths
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /restaurants:
+    get:
+      summary: Restaurants
+      description: |
+        The Restaurant endpoint returns with an array of Restaurant.
+      tags:
+        - Restaurant
+      responses:
+        200:
+          description: An array of restaurant
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Restaurant'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+  /restaurants/{id}:
+    get:
+      summary: Restaurant
+      description: |
+        The Restaurant endpoint returns with a Restaurant with the given id.
+      tags:
+        - Restaurant
+      parameters:
+        - name: id
+          in: path
+          description: The id of a restaurant
+          required: true
+          type: string
+      responses:
+        200:
+          description: A Restaurant
+          schema:
+              $ref: '#/definitions/Restaurant'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+
+  Restaurant:
+    type: object
+    properties:
+      restaurantId:
+        type: string
+        description: Unique identifier of a restaurant.
+      name:
+        type: string
+        description: Display name of restaurant.
+      description:
+        type: string
+        description: Description of restaurant.
+      imageUrl:
+        type: string
+        description: Image URL representing the restaurant.
+      address:
+        type: string
+        description: Address of restaurant
+      type:
+        type: string
+        description: Type of restaurant.
+      rating:
+        type: integer
+        format: int32
+        description: Rating of restaurant.
+        
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: Error code
+      message:
+        type: string
+        description: Error message
