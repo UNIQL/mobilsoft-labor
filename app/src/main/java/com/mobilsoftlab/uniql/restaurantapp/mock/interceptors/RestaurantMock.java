@@ -26,8 +26,8 @@ public class RestaurantMock {
             /**
              * Simple Get Example
              */
-			/*
-		}else if (uri.getPath().equals(NetworkConfig.ENDPOINT_PREFIX + "Todos") && request.method().equals("Get")) {
+            /*
+        }else if (uri.getPath().equals(NetworkConfig.ENDPOINT_PREFIX + "Todos") && request.method().equals("Get")) {
 			MemoryRepository memoryRepository = new MemoryRepository();
 			memoryRepository.open(null);
 			responseString = GsonHelper.getGson().toJson(memoryRepository.getFavourites());

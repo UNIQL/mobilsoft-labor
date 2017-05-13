@@ -1,7 +1,7 @@
 package com.mobilsoftlab.uniql.restaurantapp.ui.favourites;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.mobilsoftlab.uniql.restaurantapp.R;
 import com.mobilsoftlab.uniql.restaurantapp.RestaurantAppApplication;
@@ -37,6 +37,11 @@ public class FavouritesActivity extends AppCompatActivity implements FavouritesS
 
     @Override
     public void showFavouriteRestaurants(List<Restaurant> restaurants) {
+
+    }
+
+    @Override
+    public void showError() {
 
     }
 }

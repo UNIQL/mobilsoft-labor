@@ -21,6 +21,7 @@ public class FavouriteInteractor {
 
     @Inject
     Repository repository;
+
     @Inject
     EventBus eventBus;
 

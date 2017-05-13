@@ -12,9 +12,12 @@ import java.util.List;
 
 public interface Repository {
     void open(Context context);
+
     void close();
 
     List<Restaurant> getFavourites();
+
     void addFavourite(Restaurant event);
+
     void removeFavourite(Restaurant event);
 }

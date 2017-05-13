@@ -11,5 +11,6 @@ import java.util.List;
 
 public interface MainScreen {
     void showRestaurants(List<Restaurant> restaurants);
+
     void showNetworkError(NetworkError networkError);
 }

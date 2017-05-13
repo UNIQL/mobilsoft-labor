@@ -10,4 +10,6 @@ import java.util.List;
 
 public interface FavouritesScreen {
     void showFavouriteRestaurants(List<Restaurant> restaurants);
+
+    void showError();
 }

@@ -2,8 +2,6 @@ package com.mobilsoftlab.uniql.restaurantapp.interactor.restaurant.events;
 
 import com.mobilsoftlab.uniql.restaurantapp.model.Restaurant;
 
-import java.util.List;
-
 /**
  * Created by UNIQL on 4/5/17.
  */

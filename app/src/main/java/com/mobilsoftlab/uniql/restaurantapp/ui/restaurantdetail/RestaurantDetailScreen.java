@@ -9,5 +9,6 @@ import com.mobilsoftlab.uniql.restaurantapp.model.Restaurant;
 
 public interface RestaurantDetailScreen {
     void showRestaurant(Restaurant restaurant);
+
     void showNetworkError(NetworkError networkError);
 }

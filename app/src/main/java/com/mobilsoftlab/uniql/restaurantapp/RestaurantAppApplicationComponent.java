@@ -25,12 +25,20 @@ import dagger.Component;
 @Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class, NetworkModule.class})
 public interface RestaurantAppApplicationComponent {
     void inject(MainActivity mainActivity);
+
     void inject(RestaurantDetailActivity restaurantDetailActivity);
+
     void inject(FavouritesActivity favouritesActivity);
+
     void inject(FavouriteInteractor favouritesInteractor);
+
     void inject(RestaurantInteractor eventInteractor);
+
     void inject(MainPresenter mainPresenter);
+
     void inject(FavouritesPresenter favouritesPresenter);
+
     void inject(RestaurantDetailPresenter eventsPresenter);
+
     void inject(RestaurantAppApplication restaurantAppApplication);
 }

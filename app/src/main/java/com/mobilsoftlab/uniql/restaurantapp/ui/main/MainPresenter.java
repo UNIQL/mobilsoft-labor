@@ -1,11 +1,9 @@
 package com.mobilsoftlab.uniql.restaurantapp.ui.main;
 
-import android.util.Log;
-
 import com.mobilsoftlab.uniql.restaurantapp.RestaurantAppApplication;
 import com.mobilsoftlab.uniql.restaurantapp.interactor.restaurant.RestaurantInteractor;
 import com.mobilsoftlab.uniql.restaurantapp.interactor.restaurant.events.GetRestaurantsEvent;
-import com.mobilsoftlab.uniql.restaurantapp.model.Restaurant;
+import com.mobilsoftlab.uniql.restaurantapp.model.NetworkError;
 import com.mobilsoftlab.uniql.restaurantapp.ui.Presenter;
 
 import java.util.concurrent.Executor;
@@ -21,8 +19,10 @@ import de.greenrobot.event.EventBus;
 public class MainPresenter extends Presenter<MainScreen> {
     @Inject
     Executor executor;
+
     @Inject
     EventBus eventBus;
+
     @Inject
     RestaurantInteractor restaurantInteractor;
 
@@ -52,14 +52,10 @@ public class MainPresenter extends Presenter<MainScreen> {
     }
 
     public void onEventMainThread(GetRestaurantsEvent event) {
-        Log.d("test","test");
-        if (event.getThrowable() != null) {
-            event.getThrowable().printStackTrace();
-            if (screen != null) {
-            }
-            Log.e("Networking", "Error reading favourites", event.getThrowable());
-        } else {
-            if (screen != null) {
+        if (screen != null) {
+            if (event.getThrowable() != null) {
+                screen.showNetworkError(new NetworkError(event.getCode(), event.getThrowable().getMessage()));
+            } else {
                 screen.showRestaurants(event.getRestaurants());
             }
         }

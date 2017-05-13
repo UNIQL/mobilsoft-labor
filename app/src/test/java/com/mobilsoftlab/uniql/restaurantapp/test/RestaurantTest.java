@@ -6,18 +6,10 @@ import com.mobilsoftlab.uniql.restaurantapp.utils.RobolectricDaggerTestRunner;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.robolectric.annotation.Config;
 
-import java.util.List;
-
 import static com.mobilsoftlab.uniql.restaurantapp.TestHelper.setTestInjector;
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 @RunWith(RobolectricDaggerTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21)

@@ -1,7 +1,7 @@
 package com.mobilsoftlab.uniql.restaurantapp.ui.main;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.mobilsoftlab.uniql.restaurantapp.R;
 import com.mobilsoftlab.uniql.restaurantapp.RestaurantAppApplication;

@@ -12,11 +12,9 @@ import javax.inject.Inject;
  */
 
 public class RestaurantAppApplication extends Application {
+    public static RestaurantAppApplicationComponent injector;
     @Inject
     Repository repository;
-
-    public static RestaurantAppApplicationComponent injector;
-
 
     public void setInjector(RestaurantAppApplicationComponent appComponent) {
         injector = appComponent;

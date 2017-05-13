@@ -2,8 +2,10 @@ package com.mobilsoftlab.uniql.restaurantapp.ui.favourites;
 
 import com.mobilsoftlab.uniql.restaurantapp.RestaurantAppApplication;
 import com.mobilsoftlab.uniql.restaurantapp.interactor.favourite.FavouriteInteractor;
-import com.mobilsoftlab.uniql.restaurantapp.model.Restaurant;
+import com.mobilsoftlab.uniql.restaurantapp.interactor.favourite.events.GetFavouritesEvent;
 import com.mobilsoftlab.uniql.restaurantapp.ui.Presenter;
+
+import java.util.concurrent.Executor;
 
 import javax.inject.Inject;
 
@@ -16,8 +18,12 @@ import de.greenrobot.event.EventBus;
 public class FavouritesPresenter extends Presenter<FavouritesScreen> {
     @Inject
     EventBus eventBus;
+
     @Inject
     FavouriteInteractor favouritesInteractor;
+
+    @Inject
+    Executor executor;
 
     public FavouritesPresenter() {
         RestaurantAppApplication.injector.inject(this);
@@ -36,6 +42,21 @@ public class FavouritesPresenter extends Presenter<FavouritesScreen> {
     }
 
     public void getFavourites() {
-        favouritesInteractor.getFavourites();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                favouritesInteractor.getFavourites();
+            }
+        });
+    }
+
+    public void onEventMainThread(GetFavouritesEvent event) {
+        if (screen != null) {
+            if (event.getThrowable() != null) {
+                screen.showError();
+            } else {
+                screen.showFavouriteRestaurants(event.getRestaurants());
+            }
+        }
     }
 }

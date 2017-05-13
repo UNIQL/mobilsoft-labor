@@ -5,11 +5,12 @@ package com.mobilsoftlab.uniql.restaurantapp.model;
  */
 
 
-import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
 
-public class Restaurant   {
+
+public class Restaurant {
 
     @SerializedName("restaurantId")
     private String restaurantId = null;
@@ -33,13 +34,13 @@ public class Restaurant   {
     private Integer rating = null;
 
 
-
     /**
      * Unique identifier of a restaurant.
      **/
     public String getRestaurantId() {
         return restaurantId;
     }
+
     public void setRestaurantId(String restaurantId) {
         this.restaurantId = restaurantId;
     }
@@ -51,6 +52,7 @@ public class Restaurant   {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -62,6 +64,7 @@ public class Restaurant   {
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -73,6 +76,7 @@ public class Restaurant   {
     public String getImageUrl() {
         return imageUrl;
     }
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -84,6 +88,7 @@ public class Restaurant   {
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -95,6 +100,7 @@ public class Restaurant   {
     public String getType() {
         return type;
     }
+
     public void setType(String type) {
         this.type = type;
     }
@@ -106,10 +112,10 @@ public class Restaurant   {
     public Integer getRating() {
         return rating;
     }
+
     public void setRating(Integer rating) {
         this.rating = rating;
     }
-
 
 
     @Override

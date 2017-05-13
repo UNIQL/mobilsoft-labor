@@ -5,11 +5,12 @@ package com.mobilsoftlab.uniql.restaurantapp.model;
  */
 
 
-import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
 
-public class NetworkError   {
+
+public class NetworkError {
 
     @SerializedName("code")
     private Integer code = null;
@@ -17,12 +18,21 @@ public class NetworkError   {
     @SerializedName("message")
     private String message = null;
 
+    public NetworkError() {
+    }
+
+    public NetworkError(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
     /**
      * Error code
      **/
     public Integer getCode() {
         return code;
     }
+
     public void setCode(Integer code) {
         this.code = code;
     }
@@ -34,10 +44,10 @@ public class NetworkError   {
     public String getMessage() {
         return message;
     }
+
     public void setMessage(String message) {
         this.message = message;
     }
-
 
 
     @Override
